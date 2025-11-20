@@ -178,19 +178,29 @@ const Index = () => {
       </section>
 
       <footer className="py-12 border-t border-border">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-primary">AMAZING RP</h2>
-          <p className="text-muted-foreground mb-6">Твоя история начинается здесь</p>
-          <div className="flex justify-center gap-6">
-            <a href="#" className="hover:text-primary transition-colors">
-              <Icon name="MessageCircle" size={24} />
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              <Icon name="Users" size={24} />
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              <Icon name="Globe" size={24} />
-            </a>
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4 text-primary">AMAZING RP</h2>
+            <p className="text-muted-foreground mb-6">Твоя история начинается здесь</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-xl font-bold mb-4 text-center">Ссылки</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="https://t.me/zamcrmp" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-card border border-border hover:border-primary rounded-lg transition-all hover:scale-105"
+              >
+                <Icon name="Send" size={20} className="text-primary" />
+                <span>Телеграм канал зам владельца</span>
+              </a>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8 text-sm text-muted-foreground">
+            © 2024 AMAZING RP. Все права защищены.
           </div>
         </div>
       </footer>

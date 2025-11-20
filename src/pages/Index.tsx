@@ -74,7 +74,7 @@ const Index = () => {
 
       <section id="about" className="min-h-screen py-20 px-6">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">О проекте</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">О игре</h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <Card className="bg-card border-border hover:border-primary transition-all duration-300 animate-slide-in">

@@ -6,12 +6,11 @@ import { Input } from "@/components/ui/input";
 
 const Index = () => {
   const [galleryImages, setGalleryImages] = useState<string[]>([
-    'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800',
-    'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800',
-    'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800',
-    'https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=800',
-    'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800',
-    'https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800',
+    'https://cdn.poehali.dev/files/657db54a-92ee-4bb3-8138-c83d98e6c6ac.jpg',
+    'https://cdn.poehali.dev/files/fb40730c-d7d1-4efd-b75e-6b604b0bd008.jpg',
+    'https://cdn.poehali.dev/files/6bf30cb7-1a9d-4ff2-9cef-3110af6c8230.jpg',
+    'https://cdn.poehali.dev/files/89560f3b-a368-4243-b868-8c68b3bd92d7.jpg',
+    'https://cdn.poehali.dev/files/b7a12edb-b499-4dd1-ab1c-e267948b256e.jpg',
   ]);
   const [newImageUrl, setNewImageUrl] = useState('');
 

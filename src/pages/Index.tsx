@@ -147,7 +147,7 @@ const Index = () => {
                 <CardContent className="p-0 relative aspect-video">
                   <img 
                     src={imageUrl} 
-                    alt={`Игровой момент ${index + 1}`}
+                    alt={`Свой спидометр ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800';
@@ -160,7 +160,7 @@ const Index = () => {
                     <Icon name="Trash2" size={16} />
                   </button>
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <p className="text-lg font-semibold">Игровой момент #{index + 1}</p>
+                    <p className="text-lg font-semibold">Свой спидометр #{index + 1}</p>
                   </div>
                 </CardContent>
               </Card>

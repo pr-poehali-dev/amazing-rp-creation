@@ -46,6 +46,7 @@ const Index = () => {
             <button onClick={() => scrollToSection('home')} className="hover:text-primary transition-colors">Главная</button>
             <button onClick={() => scrollToSection('about')} className="hover:text-primary transition-colors">О нас</button>
             <button onClick={() => scrollToSection('gallery')} className="hover:text-primary transition-colors">Галерея</button>
+            <button onClick={() => scrollToSection('project')} className="hover:text-primary transition-colors">О проекте</button>
           </div>
         </div>
       </nav>
@@ -121,6 +122,32 @@ const Index = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Собери коллекцию личных машин. От старого авто до роскошных суперкаров — выбор за тобой. Открой счёт в банке и управляй своими финансами.
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="project" className="min-h-screen py-20 px-6 bg-muted/30">
+        <div className="container mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-12 animate-fade-in">О проекте</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-card border-border">
+              <CardContent className="p-10">
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <Icon name="Heart" size={48} className="text-primary" />
+                  </div>
+                </div>
+                <p className="text-xl leading-relaxed text-center mb-6">
+                  Всем привет! Наш проект это чудо, в котором будет онлайн перекупы, работяги, азартные игроки, и достаточно администрации.
+                </p>
+                <div className="border-t border-border pt-6 mt-6">
+                  <p className="text-lg text-muted-foreground text-center">
+                    На данный момент сайт разрабатывает сам <span className="text-primary font-semibold">"Зам.Владельца"</span>
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>

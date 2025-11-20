@@ -1,10 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 const Index = () => {
+  const [galleryImages, setGalleryImages] = useState<string[]>([
+    'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800',
+    'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800',
+    'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800',
+    'https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=800',
+    'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800',
+    'https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800',
+  ]);
+  const [newImageUrl, setNewImageUrl] = useState('');
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleAddImage = () => {
+    if (newImageUrl.trim()) {
+      setGalleryImages([...galleryImages, newImageUrl]);
+      setNewImageUrl('');
+    }
+  };
+
+  const handleRemoveImage = (index: number) => {
+    setGalleryImages(galleryImages.filter((_, i) => i !== index));
   };
 
   return (
@@ -99,17 +122,46 @@ const Index = () => {
 
       <section id="gallery" className="min-h-screen py-20 px-6 bg-muted/20">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">Галерея</h2>
+          <h2 className="text-5xl font-bold text-center mb-8 animate-fade-in">Галерея</h2>
+          
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="flex gap-3">
+              <Input
+                type="text"
+                placeholder="Вставьте ссылку на изображение..."
+                value={newImageUrl}
+                onChange={(e) => setNewImageUrl(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleAddImage()}
+                className="flex-1"
+              />
+              <Button onClick={handleAddImage} className="bg-primary hover:bg-primary/90">
+                <Icon name="Plus" size={20} />
+                Добавить
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2 text-center">Добавьте ссылки на скриншоты из игры</p>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((item, index) => (
-              <Card key={item} className="overflow-hidden group cursor-pointer border-border hover:border-primary transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            {galleryImages.map((imageUrl, index) => (
+              <Card key={index} className="overflow-hidden group cursor-pointer border-border hover:border-primary transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-0 relative aspect-video">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Icon name="Image" size={64} className="text-muted-foreground/50" />
-                  </div>
+                  <img 
+                    src={imageUrl} 
+                    alt={`Игровой момент ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800';
+                    }}
+                  />
+                  <button
+                    onClick={() => handleRemoveImage(index)}
+                    className="absolute top-2 right-2 bg-destructive text-destructive-foreground p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
+                  >
+                    <Icon name="Trash2" size={16} />
+                  </button>
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <p className="text-lg font-semibold">Игровой момент #{item}</p>
+                    <p className="text-lg font-semibold">Игровой момент #{index + 1}</p>
                   </div>
                 </CardContent>
               </Card>

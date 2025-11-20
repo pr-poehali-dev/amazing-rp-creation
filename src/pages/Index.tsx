@@ -156,25 +156,7 @@ const Index = () => {
 
       <section id="gallery" className="min-h-screen py-20 px-6 bg-muted/20">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-8 animate-fade-in">Галерея</h2>
-          
-          <div className="max-w-2xl mx-auto mb-12">
-            <div className="flex gap-3">
-              <Input
-                type="text"
-                placeholder="Вставьте ссылку на изображение..."
-                value={newImageUrl}
-                onChange={(e) => setNewImageUrl(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleAddImage()}
-                className="flex-1"
-              />
-              <Button onClick={handleAddImage} className="bg-primary hover:bg-primary/90">
-                <Icon name="Plus" size={20} />
-                Добавить
-              </Button>
-            </div>
-            <p className="text-sm text-muted-foreground mt-2 text-center">Добавьте ссылки на скриншоты из игры</p>
-          </div>
+          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">Галерея</h2>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {galleryImages.map((imageUrl, index) => (
